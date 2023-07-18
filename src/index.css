@@ -1,0 +1,13 @@
+.buttonCarrito {
+ /* background-color: lightgreen;*/
+  width: 30%;
+  border: none;
+  color: black;
+
+}
+.greeting {
+  width: 100%;
+  padding-top: 10em;
+  padding-bottom: 25em; 
+  text-align: center;
+}
