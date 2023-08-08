@@ -1,66 +1,93 @@
 import CartWidget from "./CartWidget";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#home">
-          <img
-            alt="Librería El trébol"
-            src="../assets/images/Eltrebol.png"
-            width="10%"
-            height="10%"
-            className="d-inline-block align-middle"
-          />
-          <h5 className="d-inline-block align-middle">Librería El trébol</h5>
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/1.1">El Cole</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.2">La Ofi</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.3">El Arte</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/1.4">Ofertas</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Que buscas?"
-                className="me-2"
-                aria-label="Search"
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to={"/"}>
+          <div className="row align-middle">
+            <div className="col-3 d-inline-block">
+              <img
+                alt="Librería El trébol"
+                src="../assets/images/Eltrebol.png"
+                width="60em"
+                height="60em"
               />
-              <Button variant="outline-success">Buscar</Button>
-            </Form>
-          </Nav>
-          <Nav className="mr-auto ">
-            <Nav.Link>
-              <CartWidget></CartWidget>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-        <Nav>
-        <img
-          alt="Librería El trébol"
-          src="../assets/images/Eltrebol.png"
-          width="12%"
-          height="12%"
-          className="d-inline-block align-middle"
-        />
-      </Nav>
-    </Container>
-  
-    </Navbar>
+            </div>
+            <div className="col-9 mt-1">
+              <div className="fs-4">Librería El trébol</div>
+            </div>
+          </div>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorías
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/categoria/cole"}>
+                    El Cole
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/categoria/ofi"}>
+                    La Ofi
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/categoria/arte"}>
+                    El Arte
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/categoria/ofertas"}>
+                    Ofertas
+                  </Link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form className="d-flex">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar"
+            />
+            <button className="btn btn-outline-success" type="submit">
+              Buscar
+            </button>
+          </form>
+          <Link to={"/cart"}>
+            <CartWidget></CartWidget>
+          </Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 

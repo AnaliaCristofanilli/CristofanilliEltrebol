@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
-import ItemList from "./ItemList";
-import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
-const ItemListContainer = () => {
-  const { cat } = useParams();
-
+const ItemDetailContainer = () => {
   const productos = [
     {
       id: 1,
@@ -138,20 +135,18 @@ const ItemListContainer = () => {
       const datosFeched = await getDatos();
       console.log(datosFeched);
     } catch (error) {
-      console.log(error.message);
+       console.log (error.message)
+   
     }
   }
   fetchingData();
-  const filterProducts = productos.filter(
-    (producto) => producto.categoria === cat
-  );
 
-
+ 
   return (
-    <div className="container bg-body-tertiary ">
-        <ItemList productos={filterProducts}> </ItemList>
+    <div className="container bg-body-tertiary">
+      <ItemDetail productos={productos}> </ItemDetail>
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

@@ -1,14 +1,26 @@
-import ItemListContainer from "./components/ItemListContainer"
-import NavBar from "./components/NavBar"
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import NavBar from "./components/NavBar";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-    <NavBar/>
-    <ItemListContainer greeting="Bienvenidos a Libreria El Trébol"  />
-  
-    </>
-  )
-}
+    <BrowserRouter>        
+      <NavBar /> 
+      <Routes>
+        <Route exact path="/" element={<Home greeting="Bienvenidos a nuestro sitio" />}/> 
+        <Route exact path="/cart" element={<Cart> </Cart>}/> 
+        <Route exact path="/categoria/:cat" element={<ItemListContainer> </ItemListContainer>}/> 
+        <Route exact path="/item/:id" element={<ItemDetailContainer> </ItemDetailContainer>}/> 
+      </Routes>
 
-export default App
+
+      
+  
+    </BrowserRouter>
+  );
+};
+
+export default App;
