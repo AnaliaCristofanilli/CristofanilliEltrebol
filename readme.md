@@ -1,5 +1,5 @@
 # CristofanilliEltrebol
 Proyecto react para e-commerce de una libreria comercial
 
-[Link a la demo] (https://www.loom.com/share/bbb3b356318245089ed0eb8613d5d379?sid=846fd66a-426a-4e36-8aef-edba50a258d2)
+[Link a la demo] (https://www.loom.com/share/cb169a96f8c843178bdee52fae5a5ca4?sid=8317f9e9-8bb2-4298-a12b-ebdc7945c733)
 
