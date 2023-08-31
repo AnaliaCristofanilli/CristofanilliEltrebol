@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import CartContext from "../context/cartContex";
+
 const CartWidget = () => {
+  const { longitud } = useContext(CartContext);
   return (
     <button className="bg-body-tertiary buttonCarrito">
       <img
@@ -7,7 +11,7 @@ const CartWidget = () => {
         width="60em"
         height="60em"
       />
-      &nbsp;&nbsp;0
+      &nbsp;&nbsp;{longitud}
     </button>
   );
 };

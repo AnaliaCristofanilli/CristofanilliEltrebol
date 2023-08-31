@@ -1,13 +1,27 @@
 .buttonCarrito {
- /* background-color: lightgreen;*/
+  /* background-color: lightgreen;*/
   /*width: 30%;*/
   border: none;
   color: black;
-
 }
 .greeting {
   width: 100%;
   padding-top: 10em;
-  padding-bottom: 25em; 
+  padding-bottom: 25em;
   text-align: center;
+}
+
+.react-confirm-alert-button-group button {
+  background-color: green;
+  color: white;
+  width: 10em;
+  height: 3em;
+  font-size: medium;
+}
+
+body {
+  background-image: url("../assets/images/fondo2.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
 }

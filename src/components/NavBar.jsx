@@ -1,6 +1,10 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+};
+
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -71,17 +75,7 @@ const NavBar = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Buscar"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
+
           <Link to={"/cart"}>
             <CartWidget></CartWidget>
           </Link>
